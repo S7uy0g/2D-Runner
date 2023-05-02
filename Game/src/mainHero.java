@@ -9,13 +9,15 @@ public class mainHero{
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 // load the image file
-                Image Character = new ImageIcon("C:\\Java Programming\\Game\\Assets\\Char0.png").getImage();
+                Image Character = Animation.getCurrenImage();
                 g.drawImage(Character, 0, 0, 80, 700 / 7, null);
             }
         };
         gameCharacter.setOpaque(false);
         gameCharacter.setPreferredSize(new Dimension(80, 700 / 6));
         gameCharacter.setBounds(10, 445, 100, 700 / 6);
+        Animation characterAnimation=new Animation(gameCharacter);
+        characterAnimation.start();
         return gameCharacter;
     }
 }
